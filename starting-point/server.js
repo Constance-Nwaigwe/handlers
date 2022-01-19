@@ -37,9 +37,14 @@ const restaurantChecks = [
 
 app.get('/restaurants', async (req, res) => {
     const restaurants = await Restaurant.findAll();
-    console.log(restaurants);
+    //console.log(restaurants);
     //res.json(restaurants);
     res.render('restaurants', {restaurants});
+});
+app.get('/menus', async (req, res) => {
+    const menus = await Menu.findAll();
+    //res.json(menus);
+    res.render('menus', {menus});
 });
 
 app.get('/restaurants/:id', async (req, res) => {
@@ -49,7 +54,8 @@ app.get('/restaurants/:id', async (req, res) => {
         }
     });
     //res.json(restaurant);
-    res.render('restaurant', restaurant);
+    //console.log(restaurant);
+    res.render('restaurant', {restaurant});
 });
 
 app.post('/restaurants', restaurantChecks, async (req, res) => {

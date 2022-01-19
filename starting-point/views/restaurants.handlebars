@@ -1,9 +1,13 @@
 <section>
     <h2>There are {{restaurants.length}} restaurants</h2>
+    <div class="restaurants">
     {{#each restaurants}}
-        <article>
+        <article class="restaurant">
             <img src="{{image}}"/>
             <h2>{{name}}</h2>
+            <a href="/restaurants/{{id}}">View restaurant</a>
         </article>
+        
     {{/each}}
+    </div>
 </section>

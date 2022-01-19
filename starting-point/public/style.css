@@ -1,3 +1,23 @@
 body {
-    background-color: green;
+    background-color: rgb(159, 245, 195);
+    margin: 2%;
+    text-align: center;
+}
+img{
+    width: 30vw;
+    height: 30vh;
+    padding-top: 2%;
+    border-radius: 50%;
+}
+.restaurants{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
+.restaurant{
+    background-color: rgb(22, 95, 117);
+    color: white;
+    margin: 1%;
+    padding: 1%;
 }
