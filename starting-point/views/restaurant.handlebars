@@ -3,7 +3,12 @@
         <article>
             <img src="{{restaurant.image}}"/>
             <h2>Name: {{restaurant.name}}</h2>
-            <p>Menu: {{restaurant.Menus}}</p>
+            {{#each restaurant.Menus}}
+            <p>Menu: {{title}}</p>
+            <p>id: {{id}}</p>
+            {{/each}}
+            <button id='deletebtn'>Delete</button>
         </article>
         <a href="/restaurants">Back to restaurant List</a>
 </section>
+<script src="/delete.js"></script>

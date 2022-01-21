@@ -24,10 +24,9 @@ app.set('view engine', 'handlebars')
 
 
 app.use(express.static('public'));
-
+app.use(require('body-parser').urlencoded());
 app.use(express.json());
 
-//populateDb();
 
 const restaurantChecks = [
     check('name').not().isEmpty().trim().escape(),
@@ -55,7 +54,12 @@ app.get('/restaurants/:id', async (req, res) => {
     });
     //res.json(restaurant);
     //console.log(restaurant);
-    res.render('restaurant', {restaurant});
+    (restaurant) ? res.render('restaurant', {restaurant}) : res.render('Errorpage');
+    //res.render('restaurant', {restaurant});
+});
+
+app.get('/restaurants-form', async (req, res) => {
+    res.render('newRestaurantForm');
 });
 
 app.post('/restaurants', restaurantChecks, async (req, res) => {
